@@ -53,7 +53,9 @@ function Register() {
             else{
                 setSuccess(true)
                 setSuccessMessage("You are registered");
-                setTimeout(()=>{setSuccess(false)},2000)
+                setTimeout(()=>{
+                    window.location.href = '/login'
+                },2000)
             }
 
         })
