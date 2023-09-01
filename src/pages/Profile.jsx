@@ -4,7 +4,7 @@ import MainScreen from '../components/MainScreen'
 function Profile() {
     const { id } = useParams()
     return (
-        <div className='h-screen w-screen'>
+        <div className='h-screen w-screen flex justify-center'>
             <MainScreen />
         </div>
     )
