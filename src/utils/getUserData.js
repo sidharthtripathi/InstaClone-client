@@ -7,7 +7,6 @@ export default async function(id){
         'Auth-Token' : token     // Example custom header
       };
     const data = await axios.get(url,{headers})
-    console.log(data.data)
     return data.data;
     }
     catch(err){
