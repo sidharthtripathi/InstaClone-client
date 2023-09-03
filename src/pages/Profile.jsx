@@ -1,11 +1,14 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+
 import MainScreen from '../components/MainScreen'
+import RequestSection from '../components/RequestSection'
 function Profile() {
-    const { id } = useParams()
+ 
     return (
         <div className='h-screen w-screen flex justify-center'>
+            
             <MainScreen />
+            <RequestSection/>
         </div>
     )
 }

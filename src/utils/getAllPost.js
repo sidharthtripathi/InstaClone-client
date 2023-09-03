@@ -1,7 +1,7 @@
 import axios from 'axios'
-export default async function getUserData(id){
+export default async function getAllPosts(id){
     try{
-    const url = `http://localhost:3000/user/${id}`
+    const url = `http://localhost:3000/post/all/${id}`
     const token = localStorage.getItem('auth-token');
     const headers = {
         'Auth-Token' : token     // Example custom header
