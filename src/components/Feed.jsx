@@ -5,22 +5,26 @@ import { useParams } from 'react-router-dom'
 import getAllPosts from '../utils/getAllPost'
 
 function Feed() {
-    const [data,setData] = useState([])
+    const [data,setData] = useState([]);
+    const [user,setUser] = useState({});
     const { id } = useParams()
+    const emptyImg = [];
     async function getData(){
         const data = await getAllPosts(id);
-        setData(data);
+        if(data.error) return;
+        setData(data.allPost);
+        setUser(data.user);
     }
     
     useEffect(()=>{
         getData();
     },[])
     return (
-        <div className='p-2'>
+        <div className='space-y-3'>
             {
-                data.map(d => {
+                data.reverse().map(d => {
                     return (
-                        <Post key = {d._id} msg = {d.postData}/>
+                        <Post key = {d._id} postId = {d._id} msg = {d.postData} imgArr = {d.postImages ? d.postImages : [] } username = {user.username} avatar={user.avatar}/>
                     )
                 })
             }

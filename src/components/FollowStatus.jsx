@@ -6,6 +6,8 @@ function FollowStatus({status}) {
         return <FollowBtn/>
     else if(status == 'pending')
         return <Pending/>
+    else if(status === 'following')
+        return <Unfollow/>
     else return 
         
 }

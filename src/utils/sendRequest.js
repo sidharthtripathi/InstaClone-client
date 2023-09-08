@@ -4,7 +4,7 @@ export default async function sendRequest(id){
     const url = `http://localhost:3000/request/${id}`;
     const token = localStorage.getItem('auth-token');
     const headers = {
-        'Auth-Token' : token     // Example custom header
+        'Auth-Token' : token     
       };
     const result =  await axios.post(url,{},{headers})
     return result;

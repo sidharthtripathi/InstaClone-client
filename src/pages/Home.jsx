@@ -1,10 +1,12 @@
 import React from 'react'
 import CreatePost from '../components/CreatePost'
+import HomeFeed from '../components/HomeFeed'
 function Home() {
   return (
     <div className='h-screen w-screen flex justify-center'>
-      <main className='w-1/3 p-2'>
+      <main className='w-1/2  overflow-y-scroll'>
         <CreatePost />
+        <HomeFeed/>
       </main>
 
     </div>

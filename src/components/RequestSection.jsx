@@ -25,7 +25,7 @@ function RequestSection() {
     },[])
   return (
     <div className='grow p-2 space-y-2'>
-        <h1 className='text-white'>Incoming Requests</h1>
+        <h1 className='font-bold text-2xl'>Incoming Requests</h1>
        { data.map(user=>{
             return <Request key={uuidv4()} removeRequest = {removeRequest} avatar={user.avatar} name = {user.name} username = {user.username}/>
         })}
