@@ -6,8 +6,9 @@ const socket = io.connect(url,{
     }
 });
 socket.on('connect_error',(err)=>{
-    console.log(err)
+    console.log(`Error connecting to socket`)
 })
+
 
 
 // getting a pm

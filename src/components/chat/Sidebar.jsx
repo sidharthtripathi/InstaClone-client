@@ -2,102 +2,103 @@ import React from 'react'
 import Header from './Header'
 import SearchBar from './SearchBar'
 import FriendsList from './FriendsList'
+import { v4 as uuidv4 } from 'uuid';
 const friendArr = [
     {
       username: "alan",
-      id: "someId1",
-      avatar: "https://example.com/avatar1.jpg",
+      _id: uuidv4(),
+      avatar: `https://robohash.org/random/${uuidv4()}`,
       bio: "Some bio 1"
     },
     {
       username: "brian",
-      id: "someId2",
-      avatar: "https://example.com/avatar2.jpg",
+      _id: uuidv4(),
+      avatar: `https://robohash.org/random/${uuidv4()}`,
       bio: "Some bio 2"
     },
     {
       username: "carol",
-      id: "someId3",
-      avatar: "https://example.com/avatar3.jpg",
+      _id: uuidv4(),
+      avatar: `https://robohash.org/random/${uuidv4()}`,
       bio: "Some bio 3"
     },
     {
       username: "david",
-      id: "someId4",
-      avatar: "https://example.com/avatar4.jpg",
+      _id: uuidv4(),
+      avatar: `https://robohash.org/random/${uuidv4()}`,
       bio: "Some bio 4"
     },
     {
       username: "emma",
-      id: "someId5",
-      avatar: "https://example.com/avatar5.jpg",
+      _id: uuidv4(),
+      avatar: `https://robohash.org/random/${uuidv4()}`,
       bio: "Some bio 5"
     },
     {
       username: "alan",
-      id: "someId1",
-      avatar: "https://example.com/avatar1.jpg",
+      _id: uuidv4(),
+      avatar: `https://robohash.org/random/${uuidv4()}`,
       bio: "Some bio 1"
     },
     {
       username: "brian",
-      id: "someId2",
-      avatar: "https://example.com/avatar2.jpg",
+      _id: uuidv4(),
+      avatar: `https://robohash.org/random/${uuidv4()}`,
       bio: "Some bio 2"
     },
     {
       username: "carol",
-      id: "someId3",
-      avatar: "https://example.com/avatar3.jpg",
+      _id: uuidv4(),
+      avatar: `https://robohash.org/random/${uuidv4()}`,
       bio: "Some bio 3"
     },
     {
       username: "david",
-      id: "someId4",
-      avatar: "https://example.com/avatar4.jpg",
+      _id: uuidv4(),
+      avatar: `https://robohash.org/random/${uuidv4()}`,
       bio: "Some bio 4"
     },
     {
       username: "emma",
-      id: "someId5",
-      avatar: "https://example.com/avatar5.jpg",
+      _id: uuidv4(),
+      avatar: `https://robohash.org/random/${uuidv4()}`,
       bio: "Some bio 5"
     },
     {
       username: "alan",
-      id: "someId1",
-      avatar: "https://example.com/avatar1.jpg",
+      _id: uuidv4(),
+      avatar: `https://robohash.org/random/${uuidv4()}`,
       bio: "Some bio 1"
     },
     {
       username: "brian",
-      id: "someId2",
-      avatar: "https://example.com/avatar2.jpg",
+      _id: uuidv4(),
+      avatar: `https://robohash.org/random/${uuidv4()}`,
       bio: "Some bio 2"
     },
     {
       username: "carol",
-      id: "someId3",
-      avatar: "https://example.com/avatar3.jpg",
+      _id: uuidv4(),
+      avatar: `https://robohash.org/random/${uuidv4()}`,
       bio: "Some bio 3"
     },
     {
       username: "david",
-      id: "someId4",
-      avatar: "https://example.com/avatar4.jpg",
+      _id: uuidv4(),
+      avatar: `https://robohash.org/random/${uuidv4()}`,
       bio: "Some bio 4"
     },
     {
       username: "emma",
-      id: "someId5",
-      avatar: "https://example.com/avatar5.jpg",
+      _id: uuidv4(),
+      avatar: `https://robohash.org/random/${uuidv4()}`,
       bio: "Some bio 5"
     }
   ]
   
 function Sidebar() {
   return (
-    <div className='flex flex-col h-full justify-start'>
+    <div className='flex flex-col h-full justify-start border-r'>
         <Header/>
         <SearchBar/>
         <FriendsList friendArr={friendArr}/>

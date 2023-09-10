@@ -1,7 +1,11 @@
 import React from 'react'
 import { AiOutlineSearch, AiOutlineHeart,AiOutlineBell } from 'react-icons/ai'
-
-function ChatHeader({ username, avatar, active }) {
+import { activeChatState } from '../../state/atoms/activeChatState';
+import {useRecoilValue} from 'recoil'
+function ChatHeader({ active }) {
+    const userInfo = useRecoilValue(activeChatState)
+    const username = userInfo.username;
+    const avatar = userInfo.avatar;
     return (
         <div className='flex items-center justify-between rounded-md bg-blue-500'>
             <div className='h-16 flex p-2'>
@@ -9,7 +13,7 @@ function ChatHeader({ username, avatar, active }) {
                 <div className='h-full flex items-center px-3'>
                     <div className='flex items-center space-x-3'>
                         <p className='font-bold text-white'>{username || "Test Name"}</p>
-                        <span className='w-3 h-3 rounded-full' style={{ backgroundColor: active ? "green" : "#ff0000" }} />
+                        {/* <span className='w-3 h-3 rounded-full' style={{ backgroundColor: active ? "green" : "#ff0000" }} /> */}
                     </div>
                 </div>
             </div>

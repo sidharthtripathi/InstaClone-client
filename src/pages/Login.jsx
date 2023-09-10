@@ -1,7 +1,7 @@
 import { AiOutlineUser, AiOutlineLock, AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 import { BsTwitter } from 'react-icons/bs'
 import { Link } from 'react-router-dom';
-import { HashLoader, MoonLoader } from 'react-spinners'
+
 
 import { useRef, useState } from 'react'
 import axios from 'axios'
@@ -29,8 +29,24 @@ export default function Login() {
                 }
                 else {
                     localStorage.setItem('auth-token', data.data['Auth-Token'])
-                    console.log('saved')
-                    window.location.href = '/'
+                    localStorage.setItem('userId',data.data.userId);
+                    // console.log(data.data);
+                    const userInfo = {
+                        username  : data.data.username,
+                        userId : data.data.userId,
+                        name : data.data.name,
+                        avatar : data.data.avatar,
+                        coverImage : data.data.coverImage,
+                        public : data.data.public,
+                        bio : data.data.bio,
+                        email : data.data.email,
+                        followersCount : data.data.followersCount,
+                        followingsCount : data.data.followingsCount,
+
+                    }
+                    const savedInfo = JSON.stringify(userInfo)
+                    localStorage.setItem('userInfo',savedInfo)
+                     window.location.href = '/'
                 }
             })
             .catch(err => console.log(err));
