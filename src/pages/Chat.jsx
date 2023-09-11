@@ -18,6 +18,7 @@ function Chat() {
         'Auth-Token': token
       }
       const data = await axios.get(url, { headers })
+      console.log('fetching done')
       setChatDB(data.data)  
     }
     catch (err) {

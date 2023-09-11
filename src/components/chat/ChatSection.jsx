@@ -10,9 +10,6 @@ function ChatSection() {
   const activeId = activeUser.userId;
   const convos = useRecoilValue(convoSelector)
   const currentChats = convos[activeId];
-  const revChats = [];
-  if(currentChats)
-  for(let i = currentChats.length-1  ; i>=0 ; i--) revChats.push(currentChats[i])
   return (
 
     <>
@@ -21,7 +18,7 @@ function ChatSection() {
         activeId ?
           <div id = "container" key={uuidv4()} className='grow flex flex-col-reverse overflow-y-scroll text-white'>
             {
-              revChats.map(chat => (
+              currentChats.revMap(chat => (
                 <div className = 'grid' key={uuidv4()}>
                   {chat.reciever._id === activeId ?
                     <Sender key={uuidv4()} value={chat.message} /> :
