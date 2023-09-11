@@ -31,3 +31,21 @@ body,#root{
 
 /* Hide scrollbar thumb (handle) */
 
+::-webkit-scrollbar-thumb {
+  display: none;
+}
+
+/* Hide scrollbar track (background) */
+::-webkit-scrollbar-track {
+  display: none;
+}
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar corner (where vertical and horizontal scrollbars meet) */
+::-webkit-scrollbar-corner {
+  display: none;
+}
