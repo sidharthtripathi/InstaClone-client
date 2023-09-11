@@ -9,6 +9,7 @@ function Profile() {
             
             <MainScreen setFollowingStat = {setFollowingStat} />
             {followingStat === 'current' && <RequestSection/>}
+
         </div>
     )
 }
