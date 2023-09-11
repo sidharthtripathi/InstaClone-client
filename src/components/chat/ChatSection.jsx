@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect} from 'react'
 import Sender from './Sender'
 import Reciever from './Reciever'
 import { v4 as uuidv4 } from 'uuid'
@@ -10,15 +10,18 @@ function ChatSection() {
   const activeId = activeUser.userId;
   const convos = useRecoilValue(convoSelector)
   const currentChats = convos[activeId];
+  const revChats = [];
+  if(currentChats)
+  for(let i = currentChats.length-1  ; i>=0 ; i--) revChats.push(currentChats[i])
   return (
 
     <>
 
       {
         activeId ?
-          <div key={uuidv4()} className='grow flex flex-col overflow-y-scroll text-white'>
+          <div id = "container" key={uuidv4()} className='grow flex flex-col-reverse overflow-y-scroll text-white'>
             {
-              currentChats.map(chat => (
+              revChats.map(chat => (
                 <div className = 'grid' key={uuidv4()}>
                   {chat.reciever._id === activeId ?
                     <Sender key={uuidv4()} value={chat.message} /> :
@@ -37,5 +40,6 @@ function ChatSection() {
 
   )
 }
+
 
 export default ChatSection
