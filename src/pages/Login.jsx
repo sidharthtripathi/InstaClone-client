@@ -58,7 +58,7 @@ export default function Login() {
         sendLoginReq();
     }
     return (
-        <section className="flex justify-center items-center h-screen w-screen p-10 bg-black text-white">
+        <section className="flex justify-center items-center h-full w-full bg-black text-white">
 
             {errorMessage && <Error className='absolute top-10 bg-red-500 outline outline-red-800 px-2 rounded-md animate__animated animate__headShake' msg={errorMessage} />}
             <div className='space-y-2'>

@@ -67,7 +67,7 @@ function Register() {
         await sendRegisterReq();
     }
     return (
-        <section className="flex relative justify-center items-center h-screen w-screen p-10 bg-black text-white">
+        <section className="flex relative justify-center items-center h-screen w-screen  bg-black text-white">
             {error && <Error className= 'absolute top-10 bg-red-500 outline outline-red-800 px-2 rounded-md animate__animated animate__headShake' msg = {errorData}/>}
             {success && <Success className= 'absolute top-10 bg-green-500 outline outline-green-800 px-2 rounded-md ' msg = {successMessasge}/>}
             <form action= '/auth/register' method = 'post' className="space-y-2">
