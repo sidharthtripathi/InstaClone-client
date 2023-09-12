@@ -1,5 +1,6 @@
 import {io} from 'socket.io-client'
-const url = "http://localhost:3000"
+import { API_BASE_URL } from '../config';
+const url = `${API_BASE_URL}`
 const socket = io.connect(url,{
     query : {
         token : localStorage.getItem('auth-token')

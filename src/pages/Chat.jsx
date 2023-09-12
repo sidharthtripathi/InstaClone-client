@@ -6,6 +6,7 @@ import { connectionState } from '../state/atoms/connectionState.js'
 import { chatdbState } from '../state/atoms/chatdbState.js'
 import Sidebar from '../components/chat/Sidebar.jsx'
 import ChatBox from '../components/chat/ChatBox.jsx'
+import {API_BASE_URL} from '../config.js'
 function Chat() {
   if (!localStorage.getItem('auth-token')) return window.location = '/login'
   const setChatDB = useSetRecoilState(chatdbState);
@@ -13,7 +14,7 @@ function Chat() {
   async function getChats() {
     try {
       const token = localStorage.getItem('auth-token');
-      const url = "http://localhost:3000/chats"
+      const url = `${API_BASE_URL}/chats`
       const headers = {
         'Auth-Token': token
       }

@@ -1,7 +1,8 @@
 import axios from 'axios'
+import { API_BASE_URL } from '../config';
 export default async function acceptRequest(username,removeRequest) {
     try {
-        const url = `http://localhost:3000/request/accept/${username}`
+        const url = `${API_BASE_URL}/request/accept/${username}`
         const token = localStorage.getItem('auth-token');
         const headers = {
             'Auth-Token': token

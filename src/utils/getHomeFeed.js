@@ -1,7 +1,8 @@
 import axios from 'axios'
+import { API_BASE_URL } from '../config'
 export default async function getHomeFeed(){
     try{
-    const url = "http://localhost:3000/post/feed"
+    const url = `${API_BASE_URL}/post/feed`
     const token = localStorage.getItem('auth-token')
     const headers = {
         "Auth-Token" : token

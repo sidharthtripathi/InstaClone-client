@@ -1,7 +1,8 @@
 import axios from "axios";
+import { API_BASE_URL } from "../config";
 export default async function cancelRequest(id){
     try{
-    const url = `http://localhost:3000/request/cancel/${id}`;
+    const url = `${API_BASE_URL}/request/cancel/${id}`;
     const token = localStorage.getItem('auth-token');
     const headers = {
         'Auth-Token' : token     // Example custom header

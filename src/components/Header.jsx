@@ -5,6 +5,7 @@ import Error from './Error'
 import FollowStatus from './FollowStatus';
 import { BsChatFill } from 'react-icons/bs';
 import axios from 'axios'
+import { API_BASE_URL } from '../config';
 function Header({setFollowingStat}) {
     const { id } = useParams();
     const [userData, setUserData] = useState({});
@@ -22,7 +23,7 @@ function Header({setFollowingStat}) {
         fetchUserData();
     }, [])
     async function handleChatting(){
-        const url = "http://localhost:3000/chat/start"
+        const url = `${API_BASE_URL}/chat/start`
         const myName = JSON.parse(localStorage.getItem('userInfo')).name
         console.log(myName)
         const headers = {

@@ -5,7 +5,7 @@ import RequestSection from '../components/RequestSection'
 function Profile() {
     const [followingStat,setFollowingStat] = useState('')
     return (
-        <div className='h-screen w-screen flex justify-center'>
+        <div className='h-screen w-screen flex justify-center text-white'>
             
             <MainScreen setFollowingStat = {setFollowingStat} />
             {followingStat === 'current' && <RequestSection/>}

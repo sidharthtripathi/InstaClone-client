@@ -7,6 +7,7 @@ import { useRef, useState } from 'react';
 import Error from '../components/Error';
 import Success from '../components/Success'
 import 'animate.css'
+import { API_BASE_URL } from '../config';
 
 function Register() {
     const [error,setError] = useState(false)
@@ -42,7 +43,7 @@ function Register() {
             setTimeout(()=>{setError(false)},2000)
             return;
         }
-        const url = 'http://localhost:3000/auth/register'
+        const url = `${API_BASE_URL}/auth/register`
         axios.post(url,postData)
         .then(data=>{
             if(data.data.error){

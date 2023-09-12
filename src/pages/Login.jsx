@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { useRef, useState } from 'react'
 import axios from 'axios'
 import Error from '../components/Error'
-
+import { API_BASE_URL } from '../config';
 export default function Login() {
     const [clickable, setClickable] = useState(true);
     const usernameRef = useRef(null);
@@ -14,7 +14,7 @@ export default function Login() {
     const [passVisible, setVisible] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
     const sendLoginReq = async () => {
-        const url = 'http://localhost:3000/auth/login'
+        const url = `${API_BASE_URL}/auth/login`
         const postData = {
             username: usernameRef.current.value,
             password: passwordRef.current.value
