@@ -11,7 +11,7 @@ function Post({ msg, imgArr, avatar, username ,postId }) {
     setLiked(true)
   }
   return (
-    <div className="space-y-3 py-2 border-b">
+    <div className="space-y-3 py-2 border-b text-white">
       <div className="flex items-center space-x-4 ">
         <img className=" w-10 h-10 object-cover rounded-full" src= {avatar ? avatar : "https://as2.ftcdn.net/v2/jpg/04/10/43/77/1000_F_410437733_hdq4Q3QOH9uwh0mcqAhRFzOKfrCR24Ta.jpg"} alt="" />
         <Link to = {`/${username}`} className="font-semibold border-b border-transparent hover:border-blue-500 duration-300">{username}</Link>
