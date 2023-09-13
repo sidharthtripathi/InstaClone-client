@@ -27,11 +27,17 @@ function MsgBox() {
         setChatdb((p)=>([...p,{message : data.message, sender : {_id : user.userId} , reciever : {_id : currentPersonId}}]))
         socket.emit('personal-msg',data)
     }
+
+    function handleKeyPress(e){
+        if(e.key === 'Enter'){
+            handleSend()
+        }
+    }
   return (
         <div className='flex items-center my-4 mx-2 rounded-full justify-around bg-gray-700'>
             <div className='flex space-x-3 items-center grow pl-3'>
                 <BsMic size = {24} className='text-white cursor-pointer'/>
-                <input ref = {msgRef} className = "bg-gray-700 h-8 w-full px-2 outline-none border-none text-white" type="text" placeholder='write something...' />
+                <input ref = {msgRef} className = "bg-gray-700 h-8 w-full px-2 outline-none border-none text-white" type="text" placeholder='write something...' onKeyDown={handleKeyPress} />
             </div>
             <div className='flex space-x-3 items-center'>
                 <AiOutlinePaperClip size = {35} className='text-white cursor-pointer'/>
