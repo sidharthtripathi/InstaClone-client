@@ -5,6 +5,8 @@ function Unfollow({userId}) {
   const [change,setChange] = useState(false)
   async function handleClick(){
     const data = await unfollow(userId);
+    console.log('done fetching')
+    console.log(data)
     if(data.data.success) return setChange(true);
   }
   return (
