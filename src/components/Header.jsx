@@ -42,7 +42,7 @@ function Header({setFollowingStat}) {
             <div className='relative h-32 mb-12'>
                 <img className='h-full w-full object-cover' src={coverImage ? coverImage : "https://tokystorage.s3.amazonaws.com/images/default-cover.png"} alt="cover Pic" />
                 <FollowStatus userId = {userData._id} status={followingStatus}/>
-                <BsChatFill color = 'white' size={25} className='absolute -bottom-8 right-20 cursor-pointer ' onClick={handleChatting}/>
+                {followingStatus !== 'current' && <BsChatFill color = 'white' size={25} className='absolute -bottom-8 right-20 cursor-pointer ' onClick={handleChatting}/>}
                 <img className='border-2 border-black rounded-full w-24 absolute top-20' src={avatar ? avatar : "https://as2.ftcdn.net/v2/jpg/04/10/43/77/1000_F_410437733_hdq4Q3QOH9uwh0mcqAhRFzOKfrCR24Ta.jpg"} alt="user pic" />
             </div>
            
