@@ -7,6 +7,8 @@ import { chatdbState } from '../state/atoms/chatdbState.js'
 import Sidebar from '../components/chat/Sidebar.jsx'
 import ChatBox from '../components/chat/ChatBox.jsx'
 import {API_BASE_URL} from '../config.js'
+import { activeChatState } from '../state/atoms/activeChatState'
+import { useRecoilValue} from 'recoil'
 function Chat() {
   if (!localStorage.getItem('auth-token')) return window.location = '/login'
   const setChatDB = useSetRecoilState(chatdbState);
@@ -38,10 +40,13 @@ function Chat() {
   useEffect(() => {
     getChats();
   }, [])
+  const activeChat = useRecoilValue(activeChatState);
+  const activeId = activeChat.userId;
   return (
+
     <main className='flex items-start h-full'>
-      <Sidebar />
-      <ChatBox />
+      {!activeId && <Sidebar />}
+      {activeId && <ChatBox />}
     </main>
   )
 }

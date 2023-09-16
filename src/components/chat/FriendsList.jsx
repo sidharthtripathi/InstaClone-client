@@ -3,19 +3,10 @@ import FriendProfile from './FriendProfile'
 import {v4 as uuidv4} from 'uuid'
 import {useRecoilValue} from 'recoil'
 import { convoSelector } from '../../state/selectors/convoSelector'
-function Empty(){
-  return (
-    <p className='text-white text-xl font-bold text-center relative inset-y-2/4 '>
-      Your Conversations..
-    </p>
-  )
-}
-function FriendsList({friendArr = []}) {
-  const myId = localStorage.getItem('userId');
+function FriendsList() {
   const convos = useRecoilValue(convoSelector);
   return (
     <div className='overflow-y-scroll grow'>
-    {!friendArr.length && <Empty/>}
         {
             Object.keys(convos).map(friendId=>(
               
